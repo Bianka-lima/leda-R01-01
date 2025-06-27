@@ -15,10 +15,18 @@ public class SelectionSort<T extends Comparable<T>> extends AbstractSorting<T> {
 		for (int i = leftIndex; i < rightIndex; i++) {
 			min = i;
 			for (int j = i + 1; j < rightIndex; j ++) {
-				if  (array[j].compareTo(array[i]) == 1) {
+				if  (array[j].compareTo(array[i]) == -1) {
 					min = j;
 				}
 			}
+			troque(array, i, min);
 		}
+	}
+
+	public void troque(T[] array, int indexI, int indexJ){
+		T temp = array[indexI];
+		array[indexI] = array[indexJ];
+		array[indexJ] = temp;
+
 	}
 }
