@@ -15,13 +15,16 @@ public class BubbleSort<T extends Comparable<T>> extends AbstractSorting<T> {
 		while (trocaOcorreu) {
 			trocaOcorreu = false;
 			for (int i = leftIndex; i < rightIndex; i++) {
-				if (array[i] > array[i+1]) {
-
+				if (array[i].compareTo(array[i+1]) == 1) {
+					troque(array, i, i+1);
+					trocaOcorreu = true;
 				}
 			}
 		}
 	}
 	public void troque(T[] array, int indexI, int indexJ) {
-
+		T temp = array[indexI];
+		array[indexI] = array[indexJ];
+		array[indexJ] = temp; 
 	}
 }
