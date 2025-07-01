@@ -1,5 +1,10 @@
 package sorting.variationsOfBubblesort;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+import javax.rmi.CORBA.Util;
+
 import sorting.AbstractSorting;
 
 /**
@@ -9,12 +14,32 @@ import sorting.AbstractSorting;
  * pushing small elements to the left. This process is repeated until the array
  * is sorted.
  */
-public class BidirectionalBubbleSort<T extends Comparable<T>> extends
-		AbstractSorting<T> {
+public class BidirectionalBubbleSort<T extends Comparable<T>> extends AbstractSorting<T> {
 
 	@Override
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not Implemented yet!");
+
+		if (array.length > 0 && leftIndex != rightIndex) {
+			boolean houveTroca = true;
+			int contador = 0;
+			while (houveTroca) {
+
+				houveTroca = false;
+
+				for(int i = leftIndex; i < rightIndex; i++) {
+					if(array[i].compareTo(array[i+1]) == 1){
+						util.Util.swap(array, i, i + 1);
+						houveTroca = true;
+					}
+				}
+				for (int j = rightIndex - contador; j > leftIndex; j--) {
+					if (array[j].compareTo(array[j-1]) == -1) {
+						util.Util.swap(array, j, j-1);
+						houveTroca = true;
+					}
+				}
+				contador++;
+			}
+		}
 	}
 }

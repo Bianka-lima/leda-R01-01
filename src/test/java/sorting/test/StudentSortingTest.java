@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import sorting.AbstractSorting;
+import sorting.variationsOfBubblesort.BidirectionalBubbleSort;
 import sorting.variationsOfBubblesort.RecursiveBubbleSort;
 import sorting.variationsOfSelectionsort.RecursiveSelectionSort;
 
@@ -38,7 +39,7 @@ public class StudentSortingTest {
 	 * do aluno
 	 */
 	private void getImplementation() {
-		this.implementation = new RecursiveBubbleSort<>();
+		this.implementation = new BidirectionalBubbleSort<>();
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
