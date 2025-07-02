@@ -19,14 +19,7 @@ public class SelectionSort<T extends Comparable<T>> extends AbstractSorting<T> {
 					min = j;
 				}
 			}
-			troque(array, i, min);
+			util.Util.swap(array, i, min);
 		}
-	}
-
-	public void troque(T[] array, int indexI, int indexJ){
-		T temp = array[indexI];
-		array[indexI] = array[indexJ];
-		array[indexJ] = temp;
-
 	}
 }

@@ -1,5 +1,7 @@
 package sorting.simpleSorting;
 
+import java.util.Arrays;
+
 import sorting.AbstractSorting;
 
 /**
@@ -12,21 +14,14 @@ public class InsertionSort<T extends Comparable<T>> extends AbstractSorting<T> {
 
 	@Override
 	public void sort(T[] array, int leftIndex, int rightIndex) {
-		boolean foraDeOrdem = true;
-		int indexI = rightIndex;
-		while (foraDeOrdem && indexI > leftIndex) {
-			foraDeOrdem = false;
-			int indexJ = indexI -1;
-			if (array[indexI].compareTo(array[indexJ]) == -1) {
-				troque(array, indexI, indexJ);
-				foraDeOrdem = true;
+		for (int i = 1; i <= rightIndex; i++) {
+			T key = array[i];
+			int j = i -1;
+			while ((j >= 0) && (array[j].compareTo(key) == 1)) {
+				util.Util.swap((array), j + 1, j);
+				j--;
 			}
-			indexI--;
 		}
 	}
-	public void troque(T[] array, int indexI, int indexJ) {
-		T temp = array[indexI];
-		array[indexI] = array[indexJ];
-		array[indexJ] = temp;
-	}
+			
 }

@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import sorting.AbstractSorting;
+import sorting.simpleSorting.*;
 import sorting.variationsOfBubblesort.BidirectionalBubbleSort;
 import sorting.variationsOfBubblesort.RecursiveBubbleSort;
 import sorting.variationsOfSelectionsort.RecursiveSelectionSort;
@@ -19,7 +20,12 @@ public class StudentSortingTest {
 	private Integer[] vetorValoresRepetidos;
 	private Integer[] vetorValoresIguais;
 
-	public AbstractSorting<Integer> implementation;
+	public AbstractSorting<Integer> bubble;
+	public AbstractSorting<Integer> insertion;
+	public AbstractSorting<Integer> selection;
+	public AbstractSorting<Integer> bubbleBidirecional;
+	public AbstractSorting<Integer> bubbleRecursivo;
+	public AbstractSorting<Integer> selectionRecursivo;
 
 	@Before
 	public void setUp() {
@@ -30,7 +36,13 @@ public class StudentSortingTest {
 		populaVetorRepetido(new Integer[] { 4, 9, 3, 4, 0, 5, 1, 4 });
 		populaVetorIgual(new Integer[] { 6, 6, 6, 6, 6, 6 });
 
-		getImplementation();
+		getBubble();
+		getInsertion();
+		getSelection();
+		getBubbleBidirecional();
+		getBubbleRecursivo();
+		getSelectionRecursivo();
+		//getImplementation2();
 	}
 
 	// // MÉTODOS AUXILIARES DA INICIALIZAÇÃO
@@ -38,8 +50,28 @@ public class StudentSortingTest {
 	 * Método que inicializa a implementação a ser testada com a implementação
 	 * do aluno
 	 */
-	private void getImplementation() {
-		this.implementation = new BidirectionalBubbleSort<>();
+	private void getBubble() {
+		this.bubble = new BubbleSort<>();
+	}
+
+	private void getInsertion() {
+		this.insertion = new InsertionSort<>();
+	}
+
+	private void getSelection() {
+		this.selection = new SelectionSort<>();
+	}
+
+	private void getBubbleBidirecional() {
+		this.bubbleBidirecional = new BidirectionalBubbleSort<>();
+	}
+
+	private void getBubbleRecursivo() {
+		this.bubbleRecursivo = new RecursiveBubbleSort<>();
+	}
+
+	private void getSelectionRecursivo() {
+		this.selectionRecursivo = new RecursiveSelectionSort<>();
 	}
 
 	public void populaVetorTamanhoPar(Integer[] arrayPadrao) {
@@ -64,39 +96,115 @@ public class StudentSortingTest {
 
 	// MÉTODOS DE TESTE
 
-	public void genericTest(Integer[] array) {
+	public void bubbleTest(Integer[] array) {
 		Integer[] copy1 = {};
 		if(array.length > 0){
 			copy1 = Arrays.copyOf(array, array.length);			
 		}
-		implementation.sort(array);
+		bubble.sort(array);
 		Arrays.sort(copy1);
 		Assert.assertArrayEquals(copy1, array);
 	}
 
+	public void insertionTest(Integer[] array) {
+		Integer[] copy1 = {};
+		if(array.length > 0){
+			copy1 = Arrays.copyOf(array, array.length);			
+		}
+		insertion.sort(array);
+		Arrays.sort(copy1);
+		Assert.assertArrayEquals(copy1, array);
+	}
+
+	public void selectionTest(Integer[] array) {
+		Integer[] copy1 = {};
+		if(array.length > 0){
+			copy1 = Arrays.copyOf(array, array.length);			
+		}
+		selection.sort(array);
+		Arrays.sort(copy1);
+		Assert.assertArrayEquals(copy1, array);
+	}
+
+	public void bubbleBidirecionalTest(Integer[] array) {
+		Integer[] copy1 = {};
+		if(array.length > 0){
+			copy1 = Arrays.copyOf(array, array.length);			
+		}
+		bubbleBidirecional.sort(array);
+		Arrays.sort(copy1);
+		Assert.assertArrayEquals(copy1, array);
+	}
+
+	public void bubbleRecursivoTest(Integer[] array) {
+		Integer[] copy1 = {};
+		if(array.length > 0){
+			copy1 = Arrays.copyOf(array, array.length);			
+		}
+		bubbleRecursivo.sort(array);
+		Arrays.sort(copy1);
+		Assert.assertArrayEquals(copy1, array);
+	}
+
+	public void selectionRecursivoTest(Integer[] array) {
+		Integer[] copy1 = {};
+		if(array.length > 0){
+			copy1 = Arrays.copyOf(array, array.length);			
+		}
+		selectionRecursivo.sort(array);
+		Arrays.sort(copy1);
+		Assert.assertArrayEquals(copy1, array);
+	}
+
+
 	@Test
 	public void testSort01() {
-		genericTest(vetorTamPar);
+		bubbleTest(vetorTamPar);
+		insertionTest(vetorTamPar);
+		selectionTest(vetorTamPar);
+		bubbleBidirecionalTest(vetorTamPar);
+		bubbleRecursivoTest(vetorTamPar);
+		selectionRecursivoTest(vetorTamPar);
 	}
 
 	@Test
 	public void testSort02() {
-		genericTest(vetorTamImpar);
+		bubbleTest(vetorTamImpar);
+		insertionTest(vetorTamImpar);
+		selectionTest(vetorTamImpar);
+		bubbleBidirecionalTest(vetorTamImpar);
+		bubbleRecursivoTest(vetorTamImpar);
+		selectionRecursivoTest(vetorTamImpar);
 	}
 
 	@Test
 	public void testSort03() {
-		genericTest(vetorVazio);
+		bubbleTest(vetorVazio);
+		insertionTest(vetorVazio);
+		selectionTest(vetorVazio);
+		bubbleBidirecionalTest(vetorVazio);
+		bubbleRecursivoTest(vetorVazio);
+		selectionRecursivoTest(vetorVazio);
 	}
 
 	@Test
 	public void testSort04() {
-		genericTest(vetorValoresIguais);
+		bubbleTest(vetorValoresIguais);
+		insertionTest(vetorValoresIguais);
+		selectionTest(vetorValoresIguais);
+		bubbleBidirecionalTest(vetorValoresIguais);
+		bubbleRecursivoTest(vetorValoresIguais);
+		selectionRecursivoTest(vetorValoresIguais);
 	}
 
 	@Test
 	public void testSort05() {
-		genericTest(vetorValoresRepetidos);
+		bubbleTest(vetorValoresRepetidos);
+		insertionTest(vetorValoresRepetidos);
+		selectionTest(vetorValoresRepetidos);
+		bubbleBidirecionalTest(vetorValoresRepetidos);
+		bubbleRecursivoTest(vetorValoresRepetidos);
+		selectionRecursivoTest(vetorValoresRepetidos);
 	}
 
 	// MÉTODOS QUE OS ALUNOS PODEM CRIAR
