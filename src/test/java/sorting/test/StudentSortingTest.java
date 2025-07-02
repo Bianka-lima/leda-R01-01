@@ -19,6 +19,11 @@ public class StudentSortingTest {
 	private Integer[] vetorVazio = {};
 	private Integer[] vetorValoresRepetidos;
 	private Integer[] vetorValoresIguais;
+	private Integer[] vetorDecrescente;
+	private Integer[] vetorUnitario;
+	private Integer[] vetorDesordenado;
+	private Integer[] vetorOrdenado;
+	private Integer[] vetorNegativos;
 
 	public AbstractSorting<Integer> bubble;
 	public AbstractSorting<Integer> insertion;
@@ -35,6 +40,16 @@ public class StudentSortingTest {
 				11, 18, 36 });
 		populaVetorRepetido(new Integer[] { 4, 9, 3, 4, 0, 5, 1, 4 });
 		populaVetorIgual(new Integer[] { 6, 6, 6, 6, 6, 6 });
+
+		populaVetorDecrescente(new Integer[] {38, 25, 22, 21, 19, 18, 0, -1});
+
+		populaVetorUnitario(new Integer[] {4});
+
+		populaVetorDesordenado(new Integer[] {9, 0, 2, 4, 5});
+
+		populaVetorOrdenado(new Integer[] {1, 2, 3, 4, 5});
+
+		populaVetorNegativos(new Integer[] {-12, -5, -2, -3, -8, -1});
 
 		getBubble();
 		getInsertion();
@@ -90,6 +105,31 @@ public class StudentSortingTest {
 	public void populaVetorIgual(Integer[] arrayPadrao) {
 		this.vetorValoresIguais = Arrays
 				.copyOf(arrayPadrao, arrayPadrao.length);
+	}
+
+	public void populaVetorDecrescente(Integer[] arrayPadrao) {
+		this.vetorDecrescente = Arrays
+				.copyOf(arrayPadrao, arrayPadrao.length);
+	}
+
+	public void populaVetorUnitario(Integer[] arrayPadrao) {
+		this.vetorUnitario = Arrays
+				.copyOf(arrayPadrao, arrayPadrao.length);
+	}
+
+	public void populaVetorDesordenado(Integer[] arrayPadrao) {
+		this.vetorDesordenado = Arrays
+				.copyOf(arrayPadrao, arrayPadrao.length);
+	}
+
+	public void populaVetorOrdenado(Integer[] arrayPadrao) {
+		this.vetorOrdenado = Arrays
+			.copyOf(arrayPadrao, arrayPadrao.length);
+	}
+
+	public void populaVetorNegativos(Integer[] arrayPadrao) {
+		this.vetorNegativos = Arrays
+			.copyOf(arrayPadrao, arrayPadrao.length);
 	}
 
 	// FIM DOS METODOS AUXILIARES DA INICIALIZAÇÃO
@@ -214,4 +254,55 @@ public class StudentSortingTest {
 	 * SEGUIR A ESTRUTURA DOS MÉTODOS DE TESTE ACIMA DESCRITOS, ORDENANDO APENAS
 	 * UMA PARTE DO ARRAY.
 	 */
+	
+	 @Test
+	 public void testSortDecresc() {
+		bubbleTest(vetorDecrescente);
+		insertionTest(vetorDecrescente);
+		selectionTest(vetorDecrescente);
+		bubbleBidirecionalTest(vetorDecrescente);
+		bubbleRecursivoTest(vetorDecrescente);
+		selectionRecursivoTest(vetorDecrescente);
+	 }
+
+	 @Test
+	 public void testSortUnitario() {
+		bubbleTest(vetorUnitario);
+		insertionTest(vetorUnitario);
+		selectionTest(vetorUnitario);
+		bubbleBidirecionalTest(vetorUnitario);
+		bubbleRecursivoTest(vetorUnitario);
+		selectionRecursivoTest(vetorUnitario);
+	 }
+
+	 @Test
+	 public void testSortDesordenado() {
+		bubbleTest(vetorDesordenado);
+		insertionTest(vetorDesordenado);
+		selectionTest(vetorDesordenado);
+		bubbleBidirecionalTest(vetorDesordenado);
+		bubbleRecursivoTest(vetorDesordenado);
+		selectionRecursivoTest(vetorDesordenado);
+	 }
+
+	 @Test
+	 public void testSortOrdenado() {
+		bubbleTest(vetorOrdenado);
+		insertionTest(vetorOrdenado);
+		selectionTest(vetorOrdenado);
+		bubbleBidirecionalTest(vetorOrdenado);
+		bubbleRecursivoTest(vetorOrdenado);
+		selectionRecursivoTest(vetorOrdenado);
+	 }
+
+	 @Test
+	 public void testSortNegativos() {
+		bubbleTest(vetorNegativos);
+		insertionTest(vetorNegativos);
+		selectionTest(vetorNegativos);
+		bubbleBidirecionalTest(vetorNegativos);
+		bubbleRecursivoTest(vetorNegativos);
+		selectionRecursivoTest(vetorNegativos);
+	 }
+
 }
