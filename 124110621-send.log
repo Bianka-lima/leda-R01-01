@@ -17,3 +17,23 @@
   <level>FINE</level>
   <message>File 124110621-BIANKA VITORIA SILVA LIMA.zip was received. It was sent by BIANKA VITORIA SILVA LIMA from IP 192.168.18.135 at 02-07-2025 00*58*04</message>
 </record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2025-07-02T01:32:01.080-0300</date>
+  <logger>BIANKA VITORIA SILVA LIMA</logger>
+  <level>FINE</level>
+  <message>File 124110621-BIANKA VITORIA SILVA LIMA.zip was received. It was sent by BIANKA VITORIA SILVA LIMA from IP 192.168.18.135 at 02-07-2025 01*32*01</message>
+</record>
+</log>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2025-07-04T09:37:12.516-0300</date>
+  <logger>BIANKA VITORIA SILVA LIMA</logger>
+  <level>FINE</level>
+  <message>File 124110621-BIANKA VITORIA SILVA LIMA.zip was received. It was sent by BIANKA VITORIA SILVA LIMA from IP 192.168.50.156 at 04-07-2025 09*37*12</message>
+</record>
